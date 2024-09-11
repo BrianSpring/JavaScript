@@ -49,17 +49,6 @@ function borrarNotas() {
     }
 }
 
-// Función para añadir campos de notas dinámicamente en el DOM
-function añadirCampoNota(numeroMateria, notaValor = '') {
-    const container = document.getElementById('inputContainer');
-    const nuevoCampo = document.createElement('div');
-    nuevoCampo.innerHTML = `
-        <label>Materia ${numeroMateria}: </label>
-        <input type="number" class="notaInput" data-materia="Materia ${numeroMateria}" value="${notaValor}" min="0" max="10" required>
-    `;
-    container.appendChild(nuevoCampo);
-}
-
 // Eventos
 // Evento para añadir las notas cuando se envía el formulario
 document.getElementById('notaForm').addEventListener('submit', function(event) {
@@ -76,6 +65,17 @@ document.getElementById('notaForm').addEventListener('submit', function(event) {
 
 // Evento para limpiar las notas cuando se hace clic en el botón de limpiar
 document.getElementById('clearStorage').addEventListener('click', borrarNotas);
+
+// Función para añadir campos de notas dinámicamente en el DOM
+function añadirCampoNota(numeroMateria, notaValor = '') {
+    const container = document.getElementById('inputContainer');
+    const nuevoCampo = document.createElement('div');
+    nuevoCampo.innerHTML = `
+        <label>Materia ${numeroMateria}: </label>
+        <input type="number" class="notaInput" data-materia="Materia ${numeroMateria}" value="${notaValor}" min="0" max="10" required>
+    `;
+    container.appendChild(nuevoCampo);
+}
 
 // Inicialización
 // Añadir campos de notas al cargar la página y recuperar notas previas de localStorage
