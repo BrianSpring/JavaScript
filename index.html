@@ -10,11 +10,25 @@
 </head>
 <body>
     <h1>Simulador de Evaluación de Notas</h1>
-    <form id="notaForm">
-        <div id="inputContainer"></div>
-        <button type="submit">Calcular Promedio</button>
-        <button type="button" id="clearStorage">Limpiar Notas</button>
+
+    <label for="cantidadMaterias">Cantidad de Materias: </label>
+    <select id="cantidadMaterias">
+        <option value="3" selected>3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+    </select>
+
+    <form id="formEstudiante">
+        <input type="text" id="nombre" placeholder="Nombre del estudiante" required>
+        <div id="materiasContainer"></div>
+        <button type="submit">Agregar Estudiante</button>
+        <button type="button" id="guardarCambios">Guardar Cambios</button>
     </form>
-    <div id="result"></div>
+
+    <h2>Historial de Estudiantes</h2>
+    <div id="historial"></div>
+
+    <button onclick="vaciarHistorial()">Vaciar Historial</button>
 </body>
 </html>
